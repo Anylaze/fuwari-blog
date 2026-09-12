@@ -16,17 +16,17 @@ export const siteConfig: SiteConfig = {
 		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		enable: true, // Display the banner image on the homepage
+		src: "assets/images/A_Banner.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
-			enable: false, // Display the credit text of the banner image
-			text: "", // Credit text to be displayed
+			enable: true, // Display the credit text of the banner image
+			text: "Test", // Credit text to be displayed
 			url: "", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
 	toc: {
-		enable: true, // Display the table of contents on the right side of the post
+		enable: false, // Display the table of contents on the right side of the post
 		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
 	},
 	favicon: [
@@ -57,9 +57,9 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	avatar: "assets/images/A_Avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	name: "Any's blog",
+	bio: "Hi",
 	links: [
 		{
 			name: "Twitter",
@@ -78,6 +78,11 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/Anylaze",
 		},
+		{
+			name: "Bilibili",
+			icon: "ant-design:bilibili-filled",
+			url: "https://space.bilibili.com/600241083",
+		}
 	],
 };
 

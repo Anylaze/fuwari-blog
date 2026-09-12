@@ -19,10 +19,18 @@ function stripInvalidXmlChars(str: string): string {
 export async function GET(context: APIContext) {
 	const blog = await getSortedPosts();
 
+	// `context.site` only holds the configured site (domain) without the base
+	// path; combine both so the channel link matches the item links produced by
+	// `url()` below when the blog is served from a sub-path.
+	const site = new URL(
+		import.meta.env.BASE_URL.replace(/\/?$/, "/"),
+		context.site ?? "https://fuwari.vercel.app",
+	);
+
 	return rss({
 		title: siteConfig.title,
 		description: siteConfig.subtitle || "No description",
-		site: context.site ?? "https://fuwari.vercel.app",
+		site,
 		items: blog.map((post) => {
 			const content =
 				typeof post.body === "string" ? post.body : String(post.body || "");
