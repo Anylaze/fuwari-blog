@@ -26,7 +26,10 @@ import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-cop
 
 // https://astro.build/config
 export default defineConfig({
-	site: "http://127.0.0.1:7700/",
+	// `site` drives canonical URLs, the sitemap and the RSS feed. Override it per
+	// environment instead of editing this file, e.g. on the server:
+	//   SITE_URL=https://blog.anylaze.ccwu.cc/ pnpm build
+	site: process.env.SITE_URL ?? "http://127.0.0.1:7700/",
 	base: "/",
 	trailingSlash: "always",
 	integrations: [
