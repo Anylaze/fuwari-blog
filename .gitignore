@@ -17,6 +17,10 @@ pnpm-debug.log*
 .env
 .env.production
 
+# git credentials — never commit these
+.git-credentials
+.git-credentials.*
+
 # macOS-specific files
 .DS_Store
 
