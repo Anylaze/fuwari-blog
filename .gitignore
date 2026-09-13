@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# 部署用构建产物（由 scripts/deploy.ps1 生成，不要提交）
+deploy-dist/
+
 # generated types
 .astro/
 
